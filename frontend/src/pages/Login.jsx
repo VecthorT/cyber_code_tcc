@@ -1,4 +1,5 @@
 import womanImg from "../assets/woman-1.png"
+import molduraAsset from "../assets/assets1.png"
 import Input from "../components/Input"
 function Login() {
   return (
@@ -23,6 +24,9 @@ function Login() {
     </button>
       <img
         src={womanImg} className="absolute bottom-0 right-0 w-72 opacity-10"
+      />
+      <img
+        src={molduraAsset} className="absolute bottom-0 left-0 w-72 opacity-50"
       />
     </div>
 
