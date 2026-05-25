@@ -22,6 +22,9 @@ function Login() {
     <button className="mt-3 text-2xl text-purple-600 border rounded p-1 hover:text-green-600 hover:bg-white">
         Entrar
     </button>
+    <button className="mt-3 text-2xl text-purple-600 border rounded p-1 hover:text-green-600 hover:bg-white">
+        Cadastro
+    </button>
       <img
         src={womanImg} className="absolute bottom-0 right-0 w-72 opacity-10"
       />

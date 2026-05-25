@@ -5,7 +5,7 @@ function FichaPersonagem(props){
     return(
         <div className="font-[Audiowide] justify-center items-center flex flex-col">
             <div className="w-70
-                            h-80
+                            h-100
                             outline-none
                             p-2
                             bg-white
@@ -33,6 +33,8 @@ function FichaPersonagem(props){
                 <BlocoAtributo titulo="DES" valor="5" icone={IconeForca}></BlocoAtributo>
                 <BlocoAtributo titulo="INT" valor="5" icone={IconeForca}></BlocoAtributo>
                 <BlocoAtributo titulo="TEC" valor="5" icone={IconeForca}></BlocoAtributo>
+                <BlocoAtributo titulo="LEVEL" valor="2" icone={IconeForca}></BlocoAtributo>
+                <BlocoAtributo titulo="XP" valor="500" icone={IconeForca}></BlocoAtributo>
             </div>
             </div>
         </div>

@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "usuario": "victor",
+    "senha": "12345",
+    "tipo": "mestre",
+    "personagens":[2,5]
+  }
+]
