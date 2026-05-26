@@ -13,7 +13,8 @@ function Input(props) {
                 py-2
                 caret-cyan-400
                 focus:shadow-[0_0_15px_#22d3ee]
-                transition-all" placeholder={props.placeholder} type={props.type ||"text"}/>
+                transition-all" placeholder={props.placeholder} type={props.type ||"text"}
+                onChange={props.onChange}/>
         </div>  
     )
 }

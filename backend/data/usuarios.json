@@ -4,6 +4,47 @@
     "usuario": "victor",
     "senha": "12345",
     "tipo": "mestre",
-    "personagens":[2,5]
-  }
+    "personagem":"",
+    "status":"ativo"
+  },
+  {
+    "id": 2,
+    "usuario": "eloiza",
+    "senha": "eloh",
+    "tipo": "jogador",
+    "personagem":1,
+    "status":"ativo"
+    },
+  {
+    "id": 3,
+    "usuario": "flavia",
+    "senha": "12345",
+    "tipo": "jogador",
+    "personagem":2,
+    "status":"ativo"
+    },
+  {
+    "id": 4,
+    "usuario": "noah",
+    "senha": "12345",
+    "tipo": "jogador",
+    "personagem":4,
+    "status":"ativo"
+    },
+  {
+    "id": 4,
+    "usuario": "zyan",
+    "senha": "12345",
+    "tipo": "jogador",
+    "personagem":6,
+    "status":"ativo"
+    },
+  {
+    "id": 5,
+    "usuario": "aurora",
+    "senha": "12345",
+    "tipo": "jogador",
+    "personagem":8,
+    "status":"ativo"
+    }
 ]

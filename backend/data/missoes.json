@@ -1,0 +1,221 @@
+[
+  {
+    "id": 1,
+    "nome": "Firewall Ômega",
+    "alvo": "MegaCorp Industries",
+
+    "descricao": "A chuva ácida cai sobre Neon City enquanto você invade os servidores secretos da MegaCorp. O sistema de defesa digital detectou atividade suspeita. Um ICE corporativo começou a rastrear sua localização.",
+
+    "conteudo": "Complete o código:\n\nif(usuario == 'admin' && senha == '123'){ ________ }",
+
+    "resposta": "acesso = true",
+
+    "ganho_xp": 120,
+
+    "atributo_necessario": "hack",
+
+    "resultado_dado": {
+
+      "20": {
+        "mensagem": "⚡ VULNERABILIDADE ENCONTRADA ⚡\n\nO sistema revelou praticamente toda a solução:\n\nacesso = true",
+        "bonus": "+50 XP"
+      },
+
+      "15-19": {
+        "mensagem": "Você encontrou logs internos.\n\nA resposta parece ativar uma permissão de acesso.",
+        "bonus": "+20 XP"
+      },
+
+      "10-14": {
+        "mensagem": "Os arquivos sugerem uma variável booleana.",
+        "bonus": "sem bônus"
+      },
+
+      "5-9": {
+        "mensagem": "⚠ DADOS CORROMPIDOS ⚠\n\n'a¢€$$0... tr...'",
+        "penalidade": "-1 tentativa"
+      },
+
+      "1-4": {
+        "mensagem": "☠ O ICE embaralhou completamente os arquivos.",
+        "penalidade": "-10 XP"
+      }
+    }
+  },
+
+  {
+    "id": 2,
+    "nome": "Fuga dos Drones",
+    "alvo": "Distrito Neon",
+
+    "descricao": "Drones policiais patrulham os becos iluminados por neon. Você precisa escapar antes que sua identidade seja revelada pela rede central.",
+
+    "conteudo": "Complete a condição:\n\nif(velocidade > 80 ________ alerta == false){ }",
+
+    "resposta": "&&",
+
+    "ganho_xp": 100,
+
+    "atributo_necessario": "des",
+
+    "resultado_dado": {
+
+      "20": {
+        "mensagem": "⚡ Reflexos perfeitos.\n\nOs sensores mostraram que as DUAS condições precisam ser verdadeiras.",
+        "bonus": "+40 XP"
+      },
+
+      "15-19": {
+        "mensagem": "Os dados indicam um operador lógico.",
+        "bonus": "+15 XP"
+      },
+
+      "10-14": {
+        "mensagem": "As duas verificações precisam funcionar juntas.",
+        "bonus": "sem bônus"
+      },
+
+      "5-9": {
+        "mensagem": "⚠ PACOTES INTERROMPIDOS ⚠\n\n'v3l0cidade ... alerta'",
+        "penalidade": "-1 tentativa"
+      },
+
+      "1-4": {
+        "mensagem": "☠ Os drones detectaram sua posição.",
+        "penalidade": "-15 XP"
+      }
+    }
+  },
+
+  {
+    "id": 3,
+    "nome": "Força Bruta",
+    "alvo": "Portão Titan",
+
+    "descricao": "Um gigantesco portão blindado bloqueia o acesso ao núcleo subterrâneo da cidade. Apenas força suficiente pode romper o sistema mecânico.",
+
+    "conteudo": "Complete o loop:\n\nfor(let i = 0; i < 5; ________ ){ }",
+
+    "resposta": "i++",
+
+    "ganho_xp": 110,
+
+    "atributo_necessario": "for",
+
+    "resultado_dado": {
+
+      "20": {
+        "mensagem": "⚡ IMPACTO CRÍTICO ⚡\n\nVocê identificou exatamente como o contador deve aumentar.",
+        "bonus": "+45 XP"
+      },
+
+      "15-19": {
+        "mensagem": "A variável precisa aumentar a cada repetição.",
+        "bonus": "+15 XP"
+      },
+
+      "10-14": {
+        "mensagem": "A solução envolve incremento.",
+        "bonus": "sem bônus"
+      },
+
+      "5-9": {
+        "mensagem": "⚠ LOOP INSTÁVEL ⚠\n\n'i... + ...'",
+        "penalidade": "-1 tentativa"
+      },
+
+      "1-4": {
+        "mensagem": "☠ O sistema travou em loop infinito.",
+        "penalidade": "-10 XP"
+      }
+    }
+  },
+
+  {
+    "id": 4,
+    "nome": "Ghost Protocol",
+    "alvo": "GhostNet Core",
+
+    "descricao": "Uma inteligência artificial rebelde assumiu parte da rede GhostNet. Você precisa decifrar rapidamente os protocolos antes que ela bloqueie o acesso.",
+
+    "conteudo": "Complete corretamente:\n\nfunction hackSystem(){ ________ 'Invasão concluída' }",
+
+    "resposta": "return",
+
+    "ganho_xp": 130,
+
+    "atributo_necessario": "int",
+
+    "resultado_dado": {
+
+      "20": {
+        "mensagem": "⚡ PROCESSAMENTO MÁXIMO ⚡\n\nVocê analisou a função inteira.\n\nA instrução retorna um valor.",
+        "bonus": "+50 XP"
+      },
+
+      "15-19": {
+        "mensagem": "A solução envia uma resposta da função.",
+        "bonus": "+20 XP"
+      },
+
+      "10-14": {
+        "mensagem": "O código precisa devolver algo.",
+        "bonus": "sem bônus"
+      },
+
+      "5-9": {
+        "mensagem": "⚠ MEMÓRIA CORROMPIDA ⚠\n\n'r3t...'",
+        "penalidade": "-1 tentativa"
+      },
+
+      "1-4": {
+        "mensagem": "☠ A IA embaralhou os dados da função.",
+        "penalidade": "-20 XP"
+      }
+    }
+  },
+
+  {
+    "id": 5,
+    "nome": "SCRUM Nexus",
+    "alvo": "Nexus Systems",
+
+    "descricao": "A equipe da Nexus perdeu completamente o controle da sprint após um ataque digital. Você precisa reorganizar o fluxo antes do prazo final.",
+
+    "conteudo": "No SCRUM, o responsável por priorizar o Product Backlog é o ________.",
+
+    "resposta": "Product Owner",
+
+    "ganho_xp": 90,
+
+    "atributo_necessario": "int",
+
+    "resultado_dado": {
+
+      "20": {
+        "mensagem": "⚡ ACESSO AOS MANUAIS INTERNOS ⚡\n\nO cargo responsável pela priorização foi identificado.",
+        "bonus": "+30 XP"
+      },
+
+      "15-19": {
+        "mensagem": "A resposta é um papel do SCRUM.",
+        "bonus": "+15 XP"
+      },
+
+      "10-14": {
+        "mensagem": "Esse papel organiza prioridades.",
+        "bonus": "sem bônus"
+      },
+
+      "5-9": {
+        "mensagem": "⚠ ARQUIVOS INCOMPLETOS ⚠",
+        "penalidade": "-1 tentativa"
+      },
+
+      "1-4": {
+        "mensagem": "☠ O backlog foi completamente corrompido.",
+        "penalidade": "-10 XP"
+      }
+    }
+  }
+]

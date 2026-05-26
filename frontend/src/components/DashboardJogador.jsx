@@ -1,3 +1,5 @@
+import api from "../services/api"
+
 function DashboardJogador(props) {
 return (
     <div className="w-150
