@@ -18,27 +18,29 @@
 
       "20": {
         "mensagem": "⚡ VULNERABILIDADE ENCONTRADA ⚡\n\nO sistema revelou praticamente toda a solução:\n\nacesso = true",
-        "bonus": "+50 XP"
+        "bonus_xp": 50
       },
 
       "15-19": {
         "mensagem": "Você encontrou logs internos.\n\nA resposta parece ativar uma permissão de acesso.",
-        "bonus": "+20 XP"
+        "bonus_xp": 20
       },
 
       "10-14": {
         "mensagem": "Os arquivos sugerem uma variável booleana.",
-        "bonus": "sem bônus"
+        "bonus_xp": 0
       },
 
       "5-9": {
         "mensagem": "⚠ DADOS CORROMPIDOS ⚠\n\n'a¢€$$0... tr...'",
-        "penalidade": "-1 tentativa"
+        "tipo_penalidade": "hack",
+        "penalidade": 1
       },
 
       "1-4": {
         "mensagem": "☠ O ICE embaralhou completamente os arquivos.",
-        "penalidade": "-10 XP"
+        "tipo_penalidade": "xp",
+        "penalidade": 10
       }
     }
   },
@@ -62,27 +64,29 @@
 
       "20": {
         "mensagem": "⚡ Reflexos perfeitos.\n\nOs sensores mostraram que as DUAS condições precisam ser verdadeiras.",
-        "bonus": "+40 XP"
+        "bonus_xp": 40
       },
 
       "15-19": {
         "mensagem": "Os dados indicam um operador lógico.",
-        "bonus": "+15 XP"
+        "bonus_xp": 15
       },
 
       "10-14": {
         "mensagem": "As duas verificações precisam funcionar juntas.",
-        "bonus": "sem bônus"
+        "bonus_xp": 0
       },
 
       "5-9": {
         "mensagem": "⚠ PACOTES INTERROMPIDOS ⚠\n\n'v3l0cidade ... alerta'",
-        "penalidade": "-1 tentativa"
+        "tipo_penalidade": "des",
+        "penalidade": 1
       },
 
       "1-4": {
         "mensagem": "☠ Os drones detectaram sua posição.",
-        "penalidade": "-15 XP"
+        "tipo_penalidade": "xp",
+        "penalidade": 15
       }
     }
   },
@@ -106,27 +110,29 @@
 
       "20": {
         "mensagem": "⚡ IMPACTO CRÍTICO ⚡\n\nVocê identificou exatamente como o contador deve aumentar.",
-        "bonus": "+45 XP"
+        "bonus_xp": 45
       },
 
       "15-19": {
         "mensagem": "A variável precisa aumentar a cada repetição.",
-        "bonus": "+15 XP"
+        "bonus_xp": 15
       },
 
       "10-14": {
         "mensagem": "A solução envolve incremento.",
-        "bonus": "sem bônus"
+        "bonus_xp": 0
       },
 
       "5-9": {
         "mensagem": "⚠ LOOP INSTÁVEL ⚠\n\n'i... + ...'",
-        "penalidade": "-1 tentativa"
+        "tipo_penalidade": "for",
+        "penalidade": 1
       },
 
       "1-4": {
         "mensagem": "☠ O sistema travou em loop infinito.",
-        "penalidade": "-10 XP"
+        "tipo_penalidade": "xp",
+        "penalidade": 10
       }
     }
   },
@@ -150,27 +156,29 @@
 
       "20": {
         "mensagem": "⚡ PROCESSAMENTO MÁXIMO ⚡\n\nVocê analisou a função inteira.\n\nA instrução retorna um valor.",
-        "bonus": "+50 XP"
+        "bonus_xp": 50
       },
 
       "15-19": {
         "mensagem": "A solução envia uma resposta da função.",
-        "bonus": "+20 XP"
+        "bonus_xp": 20
       },
 
       "10-14": {
         "mensagem": "O código precisa devolver algo.",
-        "bonus": "sem bônus"
+        "bonus_xp": 0
       },
 
       "5-9": {
         "mensagem": "⚠ MEMÓRIA CORROMPIDA ⚠\n\n'r3t...'",
-        "penalidade": "-1 tentativa"
+        "tipo_penalidade": "int",
+        "penalidade": 1
       },
 
       "1-4": {
         "mensagem": "☠ A IA embaralhou os dados da função.",
-        "penalidade": "-20 XP"
+        "tipo_penalidade": "xp",
+        "penalidade": 20
       }
     }
   },
@@ -193,28 +201,30 @@
     "resultado_dado": {
 
       "20": {
-        "mensagem": "⚡ ACESSO AOS MANUAIS INTERNOS ⚡\n\nO cargo responsável pela priorização foi identificado.",
-        "bonus": "+30 XP"
+        "mensagem": "⚡ ACESSO AOS MANUAIS INTERNOS ⚡\n\nO cargo responsável pela priorização foi identificado. Product ...",
+        "bonus_xp": 30
       },
 
       "15-19": {
         "mensagem": "A resposta é um papel do SCRUM.",
-        "bonus": "+15 XP"
+        "bonus_xp": 15
       },
 
       "10-14": {
         "mensagem": "Esse papel organiza prioridades.",
-        "bonus": "sem bônus"
+        "bonus_xp": 0
       },
 
       "5-9": {
         "mensagem": "⚠ ARQUIVOS INCOMPLETOS ⚠",
-        "penalidade": "-1 tentativa"
+        "tipo_penalidade": "int",
+        "penalidade": 1
       },
 
       "1-4": {
         "mensagem": "☠ O backlog foi completamente corrompido.",
-        "penalidade": "-10 XP"
+        "tipo_penalidade": "xp",
+        "penalidade": 25
       }
     }
   }

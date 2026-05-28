@@ -41,10 +41,18 @@ app.post("/api/login", (req, res) => {
         personagensEncontrado = personagens.find(
             p => p.id == usuarioEncontrado.personagem
         )
+        missaoEncontrada = missoes.find(
+            m => m.id == usuarioEncontrado.missao
+        )
+        armasEncontradas = armas.filter(
+            a => personagensEncontrado.armas.includes(a.id)
+        )
     }
     res.json({
         usuario: usuarioEncontrado,
-        personagem: personagensEncontrado
+        personagem: personagensEncontrado,
+        armas: armasEncontradas,
+        missao:missaoEncontrada
     })
 })
 

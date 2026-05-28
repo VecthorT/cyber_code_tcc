@@ -2,38 +2,71 @@ import womanImg from "../assets/woman-1.png"
 import molduraAsset from "../assets/assets1.png"
 import Input from "../components/Input"
 // 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import api from "../services/api"
 
 function Login() {
-
   const navigate = useNavigate()
   const [usuario, setUsuario] = useState("")
   const [senha, setSenha] = useState("")
+  const usuarioSalvo = localStorage.getItem("usuario")
+    useEffect(()=>{
+      if(usuarioSalvo){
+
+          const usuario = JSON.parse(usuarioSalvo)
+
+          if(usuario.tipo === "mestre"){
+
+              navigate("/mestre")
+
+          }else{
+
+              navigate("/jogador")
+          }
+      }
+    }, [])
 
   async function fazerLogin(){
     try{
-      const response = await api.post("/login", {
-        usuario, 
-        senha
-      })
-      localStorage.setItem(
-        "usuario",
-        JSON.stringify(response.data.usuario)
-      )
-      localStorage.setItem(
-        "personagem",
-        JSON.stringify(response.data.personagem)
-      )
-      if(response.data.usuario.tipo === "mestre"){
-        navigate("/mestre")
-      }else{
-        navigate("/jogador")
+        const response = await api.post("/login", {
+          usuario, 
+          senha
+        })
+        localStorage.setItem(
+          "usuario",
+          JSON.stringify(response.data.usuario)
+        )
+        localStorage.setItem(
+          "personagem",
+          JSON.stringify(response.data.personagem)
+        )
+        localStorage.setItem(
+          "armas",
+          JSON.stringify(response.data.armas)
+        )
+        localStorage.setItem(
+          "missao",
+          JSON.stringify(response.data.missao)
+        )
+        if(response.data.usuario){
+          const usuarioSalvo = localStorage.getItem("usuario")
+          if(usuarioSalvo){
+
+              const usuario = JSON.parse(usuarioSalvo)
+
+              if(usuario.tipo === "mestre"){
+
+                  navigate("/mestre")
+
+              }else{
+
+                  navigate("/jogador")
+              }
       }
-    }catch(error){
-      alert(error)
-      alert("Usuario ou senha nao encontrado")
+        }
+      }catch(error){
+        alert("Usuario ou senha nao encontrado")
     }
   }
 
@@ -57,7 +90,7 @@ function Login() {
     <button className="mt-3 text-2xl text-purple-600 border rounded p-1 hover:text-green-600 hover:bg-white" onClick={fazerLogin}>
         Entrar
     </button>
-    <button className="mt-3 text-2xl text-purple-600 border rounded p-1 hover:text-green-600 hover:bg-white"  >
+    <button className="mt-3 text-2xl text-purple-600 border rounded p-1 hover:text-green-600 hover:bg-white" onClick={() => navigate("/cadastro")}>
         Cadastro
     </button>
       <img
