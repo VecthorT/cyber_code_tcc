@@ -14,7 +14,9 @@ function Input(props) {
                 caret-cyan-400
                 focus:shadow-[0_0_15px_#22d3ee]
                 transition-all" placeholder={props.placeholder} type={props.type ||"text"}
-                onChange={props.onChange}/>
+                onChange={props.onChange}
+                type={props.tipo}
+                />
         </div>  
     )
 }

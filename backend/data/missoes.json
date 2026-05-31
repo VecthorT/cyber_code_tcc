@@ -4,11 +4,18 @@
     "nome": "Firewall Ômega",
     "alvo": "MegaCorp Industries",
 
-    "descricao": "A chuva ácida cai sobre Neon City enquanto você invade os servidores secretos da MegaCorp. O sistema de defesa digital detectou atividade suspeita. Um ICE corporativo começou a rastrear sua localização.",
+    "descricao": "A chuva ácida cai sobre Neon City enquanto cabos energizados iluminam os becos. Você invadiu os servidores secretos da MegaCorp, mas um ICE corporativo começou a rastrear sua localização em tempo real.",
 
-    "conteudo": "Complete o código:\n\nif(usuario == 'admin' && senha == '123'){ ________ }",
+    "conteudo": "Complete corretamente o bloco de autenticação:\n\nif(usuario == 'admin' && senha == '123'){ ________ }\n\nA) acesso == true\nB) acesso = true\nC) acesso === false\nD) acesso != true",
 
-    "resposta": "acesso = true",
+    "alternativas": {
+      "A": "acesso == true",
+      "B": "acesso = true",
+      "C": "acesso === false",
+      "D": "acesso != true"
+    },
+
+    "resposta": "B",
 
     "ganho_xp": 120,
 
@@ -17,12 +24,12 @@
     "resultado_dado": {
 
       "20": {
-        "mensagem": "⚡ VULNERABILIDADE ENCONTRADA ⚡\n\nO sistema revelou praticamente toda a solução:\n\nacesso = true",
+        "mensagem": "⚡ VULNERABILIDADE ENCONTRADA ⚡\n\nOs servidores vazaram praticamente toda a solução.",
         "bonus_xp": 50
       },
 
       "15-19": {
-        "mensagem": "Você encontrou logs internos.\n\nA resposta parece ativar uma permissão de acesso.",
+        "mensagem": "Você encontrou logs indicando uma atribuição de acesso.",
         "bonus_xp": 20
       },
 
@@ -32,13 +39,13 @@
       },
 
       "5-9": {
-        "mensagem": "⚠ DADOS CORROMPIDOS ⚠\n\n'a¢€$$0... tr...'",
+        "mensagem": "⚠ PACOTES CORROMPIDOS ⚠\n\n'a¢€$$0...' ",
         "tipo_penalidade": "hack",
         "penalidade": 1
       },
 
       "1-4": {
-        "mensagem": "☠ O ICE embaralhou completamente os arquivos.",
+        "mensagem": "☠ O ICE detectou sua presença e bloqueou parte da conexão.",
         "tipo_penalidade": "xp",
         "penalidade": 10
       }
@@ -50,11 +57,18 @@
     "nome": "Fuga dos Drones",
     "alvo": "Distrito Neon",
 
-    "descricao": "Drones policiais patrulham os becos iluminados por neon. Você precisa escapar antes que sua identidade seja revelada pela rede central.",
+    "descricao": "Sirens ecoam entre os prédios enquanto drones policiais escaneiam cada esquina. Você precisa escapar sem ativar o sistema central de vigilância.",
 
-    "conteudo": "Complete a condição:\n\nif(velocidade > 80 ________ alerta == false){ }",
+    "conteudo": "Complete corretamente a condição:\n\nif(velocidade > 80 ________ alerta == false){ }\n\nA) ||\nB) ==\nC) &&\nD) !=",
 
-    "resposta": "&&",
+    "alternativas": {
+      "A": "||",
+      "B": "==",
+      "C": "&&",
+      "D": "!=" 
+    },
+
+    "resposta": "C",
 
     "ganho_xp": 100,
 
@@ -63,12 +77,12 @@
     "resultado_dado": {
 
       "20": {
-        "mensagem": "⚡ Reflexos perfeitos.\n\nOs sensores mostraram que as DUAS condições precisam ser verdadeiras.",
+        "mensagem": "⚡ REFLEXOS SOBRENATURAIS ⚡\n\nOs sensores indicam que ambas as condições precisam ser verdadeiras.",
         "bonus_xp": 40
       },
 
       "15-19": {
-        "mensagem": "Os dados indicam um operador lógico.",
+        "mensagem": "Os logs mostram um operador lógico combinando condições.",
         "bonus_xp": 15
       },
 
@@ -78,13 +92,13 @@
       },
 
       "5-9": {
-        "mensagem": "⚠ PACOTES INTERROMPIDOS ⚠\n\n'v3l0cidade ... alerta'",
+        "mensagem": "⚠ INTERFERÊNCIA DIGITAL ⚠",
         "tipo_penalidade": "des",
         "penalidade": 1
       },
 
       "1-4": {
-        "mensagem": "☠ Os drones detectaram sua posição.",
+        "mensagem": "☠ Os drones travaram sua rota de fuga.",
         "tipo_penalidade": "xp",
         "penalidade": 15
       }
@@ -96,11 +110,18 @@
     "nome": "Força Bruta",
     "alvo": "Portão Titan",
 
-    "descricao": "Um gigantesco portão blindado bloqueia o acesso ao núcleo subterrâneo da cidade. Apenas força suficiente pode romper o sistema mecânico.",
+    "descricao": "Um gigantesco portão blindado bloqueia a entrada do subterrâneo proibido. Motores hidráulicos estremecem enquanto o sistema exige uma sequência válida.",
 
-    "conteudo": "Complete o loop:\n\nfor(let i = 0; i < 5; ________ ){ }",
+    "conteudo": "Complete corretamente o loop:\n\nfor(let i = 0; i < 5; ________ ){ }\n\nA) i--\nB) i + 1\nC) i++\nD) ++5",
 
-    "resposta": "i++",
+    "alternativas": {
+      "A": "i--",
+      "B": "i + 1",
+      "C": "i++",
+      "D": "++5"
+    },
+
+    "resposta": "C",
 
     "ganho_xp": 110,
 
@@ -109,12 +130,12 @@
     "resultado_dado": {
 
       "20": {
-        "mensagem": "⚡ IMPACTO CRÍTICO ⚡\n\nVocê identificou exatamente como o contador deve aumentar.",
+        "mensagem": "⚡ IMPACTO CRÍTICO ⚡\n\nVocê identificou exatamente o incremento necessário.",
         "bonus_xp": 45
       },
 
       "15-19": {
-        "mensagem": "A variável precisa aumentar a cada repetição.",
+        "mensagem": "O contador precisa aumentar a cada repetição.",
         "bonus_xp": 15
       },
 
@@ -124,13 +145,13 @@
       },
 
       "5-9": {
-        "mensagem": "⚠ LOOP INSTÁVEL ⚠\n\n'i... + ...'",
+        "mensagem": "⚠ LOOP INSTÁVEL ⚠",
         "tipo_penalidade": "for",
         "penalidade": 1
       },
 
       "1-4": {
-        "mensagem": "☠ O sistema travou em loop infinito.",
+        "mensagem": "☠ O sistema entrou em loop infinito.",
         "tipo_penalidade": "xp",
         "penalidade": 10
       }
@@ -142,11 +163,18 @@
     "nome": "Ghost Protocol",
     "alvo": "GhostNet Core",
 
-    "descricao": "Uma inteligência artificial rebelde assumiu parte da rede GhostNet. Você precisa decifrar rapidamente os protocolos antes que ela bloqueie o acesso.",
+    "descricao": "Uma IA rebelde assumiu parte da GhostNet. Linhas de código começam a desaparecer enquanto o sistema tenta expulsar você da rede.",
 
-    "conteudo": "Complete corretamente:\n\nfunction hackSystem(){ ________ 'Invasão concluída' }",
+    "conteudo": "Complete corretamente a função:\n\nfunction hackSystem(){ ________ 'Invasão concluída' }\n\nA) break\nB) return\nC) console.log\nD) continue",
 
-    "resposta": "return",
+    "alternativas": {
+      "A": "break",
+      "B": "return",
+      "C": "console.log",
+      "D": "continue"
+    },
+
+    "resposta": "B",
 
     "ganho_xp": 130,
 
@@ -155,7 +183,7 @@
     "resultado_dado": {
 
       "20": {
-        "mensagem": "⚡ PROCESSAMENTO MÁXIMO ⚡\n\nVocê analisou a função inteira.\n\nA instrução retorna um valor.",
+        "mensagem": "⚡ PROCESSAMENTO MÁXIMO ⚡\n\nVocê analisou toda a estrutura da função.",
         "bonus_xp": 50
       },
 
@@ -170,13 +198,13 @@
       },
 
       "5-9": {
-        "mensagem": "⚠ MEMÓRIA CORROMPIDA ⚠\n\n'r3t...'",
+        "mensagem": "⚠ MEMÓRIA CORROMPIDA ⚠",
         "tipo_penalidade": "int",
         "penalidade": 1
       },
 
       "1-4": {
-        "mensagem": "☠ A IA embaralhou os dados da função.",
+        "mensagem": "☠ A IA destruiu parte dos dados do sistema.",
         "tipo_penalidade": "xp",
         "penalidade": 20
       }
@@ -188,11 +216,18 @@
     "nome": "SCRUM Nexus",
     "alvo": "Nexus Systems",
 
-    "descricao": "A equipe da Nexus perdeu completamente o controle da sprint após um ataque digital. Você precisa reorganizar o fluxo antes do prazo final.",
+    "descricao": "A Nexus Systems sofreu um ataque digital durante a sprint final. O time perdeu o controle do backlog e o prazo está próximo do colapso.",
 
-    "conteudo": "No SCRUM, o responsável por priorizar o Product Backlog é o ________.",
+    "conteudo": "No SCRUM, quem é responsável por priorizar o Product Backlog?\n\nA) Scrum Master\nB) Product Owner\nC) Dev Team\nD) Stakeholder",
 
-    "resposta": "Product Owner",
+    "alternativas": {
+      "A": "Scrum Master",
+      "B": "Product Owner",
+      "C": "Dev Team",
+      "D": "Stakeholder"
+    },
+
+    "resposta": "B",
 
     "ganho_xp": 90,
 
@@ -201,7 +236,7 @@
     "resultado_dado": {
 
       "20": {
-        "mensagem": "⚡ ACESSO AOS MANUAIS INTERNOS ⚡\n\nO cargo responsável pela priorização foi identificado. Product ...",
+        "mensagem": "⚡ ACESSO AOS MANUAIS INTERNOS ⚡\n\nO responsável pelo backlog foi identificado.",
         "bonus_xp": 30
       },
 
@@ -216,13 +251,13 @@
       },
 
       "5-9": {
-        "mensagem": "⚠ ARQUIVOS INCOMPLETOS ⚠",
+        "mensagem": "⚠ DADOS ORGANIZACIONAIS CORROMPIDOS ⚠",
         "tipo_penalidade": "int",
         "penalidade": 1
       },
 
       "1-4": {
-        "mensagem": "☠ O backlog foi completamente corrompido.",
+        "mensagem": "☠ O backlog da sprint foi perdido.",
         "tipo_penalidade": "xp",
         "penalidade": 25
       }
