@@ -1,115 +1,183 @@
-# CYBERCODE – Hackeando o Futuro
+# Cyber Code RPG
 
-Sistema web gamificado inspirado em RPGs cyberpunk desenvolvido como Trabalho de Conclusão de Curso (TCC) em Engenharia de Software.
+Sistema web gamificado para ensino de programação e conceitos de Engenharia de Software através de mecânicas inspiradas em RPG.
 
-O projeto utiliza mecânicas de RPG para ensinar conceitos de tecnologia, segurança da informação e metodologias ágeis de forma interativa.
+## Sobre o Projeto
 
----
+O Cyber Code RPG foi desenvolvido como Trabalho de Conclusão de Curso (TCC) de Engenharia de Software.
 
-# Tecnologias Utilizadas
+O sistema transforma exercícios de programação em missões interativas dentro de um universo cyberpunk, incentivando o aprendizado através de gamificação.
 
-## Frontend
-- React.js
-- TailwindCSS
-- React Router DOM
-
-## Backend
-- Node.js
-- Express.js
-
-## Banco de Dados
-- SQLite
+Os jogadores evoluem personagens, realizam desafios técnicos, ganham experiência e progridem em missões organizadas por um sistema Kanban administrado por um Mestre.
 
 ---
 
-# Objetivo do Projeto
+## Funcionalidades
 
-O objetivo do sistema é criar uma plataforma gamificada educacional onde jogadores participam de campanhas e missões relacionadas à tecnologia, utilizando elementos de RPG como:
+### Jogador
 
-- atributos
-- níveis
-- XP
-- rolagem de dados
-- campanhas
-- desafios tecnológicos
+* Login de usuário
+* Visualização da ficha do personagem
+* Sistema de atributos
 
----
+  * FOR (Força)
+  * DES (Destreza)
+  * INT (Inteligência)
+  * HACK (Hackeamento)
+* Visualização de missões disponíveis
+* Execução de missões
+* Sistema de perguntas e respostas
+* Rolagem de dado D20
+* Ganho e perda de XP
+* Progressão de nível
+* Chat em tempo real
 
-# Funcionalidades
+### Mestre
 
-## Sistema Base
-- [x] Estrutura React
-- [x] Configuração TailwindCSS
-- [x] Sistema de Rotas
-- [x] Estrutura Frontend/Backend
-- [ ] Integração Backend + Frontend
+* Gerenciamento de jogadores
+* Visualização de personagens
+* Atribuição de missões
+* Controle Kanban
 
----
-
-## Interface Cyberpunk
-- [x] Tema cyberpunk inicial
-- [x] Assets visuais HUD
-- [ ] Interface futurista completa
-- [ ] Responsividade
-
----
-
-## Usuários
-- [ ] Cadastro
-- [ ] Login
-- [ ] Controle Mestre/Jogador
+  * Backlog
+  * Sprint
+  * Concluído
+* Cadastro de novas missões
+* Controle da progressão dos jogadores
 
 ---
 
-## Personagens
-- [ ] Criação de personagem
-- [ ] Sistema de atributos
-- [ ] Sistema de nível
-- [ ] Sistema de XP
+## Tecnologias Utilizadas
+
+### Frontend
+
+* React 19
+* Vite
+* React Router DOM
+* Axios
+* React Icons
+* Tailwind CSS
+
+### Backend
+
+* Node.js
+* Express
+* Socket.IO
+* Axios
+* Bcrypt
+
+### Persistência
+
+* JSON Server
 
 ---
 
-## Campanhas
-- [ ] Criar campanha
-- [ ] Listar campanhas
-- [ ] Participar de campanha
+## Arquitetura
+
+```text
+Frontend (React)
+        |
+        v
+Backend (Express)
+        |
+        v
+JSON Server
+```
 
 ---
 
-## Missões
-- [ ] Criar missão
-- [ ] Missões principais/secundárias
-- [ ] Sistema de dificuldade
-- [ ] Recompensas
+## Estrutura do Projeto
+
+```text
+cyber_code_tcc
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── routes
+│   │   ├── services
+│   │   └── utils
+│
+├── backend
+│   ├── server.js
+│   └── db.json
+│
+└── README.md
+```
 
 ---
 
-## Sistema RPG
-- [ ] Rolagem D20
-- [ ] Cálculo de sucesso/falha
-- [ ] Integração de atributos
+## Instalação
+
+### Backend
+
+```bash
+cd backend
+
+npm install
+
+node server.js
+```
+
+### Frontend
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+### JSON Server
+
+```bash
+npx json-server db.json --watch --port 3000
+```
 
 ---
 
-## Chat
-- [ ] Sistema de mensagens
-- [ ] Comunicação entre jogadores
+## Portas Utilizadas
+
+| Serviço     | Porta |
+| ----------- | ----- |
+| Frontend    | 5173  |
+| Backend     | 3001  |
+| JSON Server | 3000  |
 
 ---
 
-# Estrutura do Projeto
+## Fluxo do Sistema
 
-```txt
-frontend/
- ├── src/
- │    ├── assets/
- │    ├── components/
- │    ├── pages/
- │    ├── services/
- │    └── App.jsx
+1. O Mestre cadastra ou atribui missões.
+2. As missões entram no Backlog do jogador.
+3. O Mestre move missões para Sprint.
+4. O Jogador executa os desafios.
+5. O sistema realiza a rolagem do D20.
+6. O resultado gera recompensas ou penalidades.
+7. XP e progressão são atualizados.
+8. A missão é concluída.
 
-backend/
- ├── database/
- ├── routes/
- ├── controllers/
- └── server.js
+---
+
+## Funcionalidades Implementadas
+
+* Autenticação de usuários
+* Sistema de personagens
+* Sistema de atributos
+* Sistema de XP
+* Sistema de níveis
+* Cadastro de missões
+* Kanban de missões
+* Chat em tempo real
+* Rolagem de dados
+* Gamificação do aprendizado
+
+---
+
+## Autor
+
+Victor
+
+Projeto desenvolvido como Trabalho de Conclusão de Curso em Engenharia de Software.

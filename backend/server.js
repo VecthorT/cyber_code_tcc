@@ -50,27 +50,33 @@ app.post("/api/usuarios", async (req, res) => {
     const usuariosResp = await axios.get(
         "http://localhost:3000/usuarios"
     )
-
     const usuarioExistente =
-        usuariosResp.data.find(
-            u => u.usuario === usuario
-        )
-
+    usuariosResp.data.find(
+        u => u.usuario === usuario
+    )
+    
     if(usuarioExistente){
         return res.status(400).json({
             erro: "Usuário já cadastrado"
         })
     }
     const senhaHash = await bcrypt.hash(senha, 10)
+
     const novoUsuario = {
+
         usuario,
         senha:senhaHash,
         tipo: "jogador",
         personagem,
-        missao: null,
+        xp: 0,
+        nivel: 1,
+        kanban: {
+            backlog: [],
+            sprint: [],
+            concluido: []
+        },
         status: "ativo"
     }
-
     const criado = await axios.post(
         "http://localhost:3000/usuarios",
         novoUsuario
@@ -127,12 +133,10 @@ app.post("/api/login", async (req, res) => {
                 personagensResp.data.find(
                     p => Number(p.id) === Number(usuarioEncontrado.personagem)
                 )
-            console.log(personagemEncontrado)
             missaoEncontrada =
             missoesResp.data.find(
-                m => Number(m.id) === Number(usuarioEncontrado.missao)
+                m => Number(m.codigo) === Number(usuarioEncontrado.missao)
             )
-            console.log(missaoEncontrada)
         }
 
         res.json({
@@ -168,6 +172,118 @@ app.get("/api/usuarios", async (req, res) => {
             erro: "Erro ao buscar usuários"
         })
     }
+})
+app.get("/api/usuarios/:id", async (req, res) => {
+    const id = req.params.id
+    const usuariosResp = await axios.get(
+            "http://localhost:3000/usuarios"
+        )
+    usuarioEncontrado = usuariosResp.data.find(
+       u => id == u.id
+    )
+    if (!usuariosResp){
+        return res.status(404).json({erro:"User nao encontrado"})
+    }
+    res.json(usuarioEncontrado)
+})
+app.patch("/api/usuarios/:id", async (req, res) => {
+
+    const id = req.params.id
+
+    try {
+
+        const usuariosResp = await axios.get(
+            "http://localhost:3000/usuarios"
+        )
+
+        const usuario = usuariosResp.data.find(
+            u => u.id == id
+        )
+
+        if (!usuario) {
+            return res.status(404).json({
+                erro: "Usuário não localizado"
+            })
+        }
+
+        const atualizado = await axios.patch(
+            `http://localhost:3000/usuarios/${id}`,
+            req.body
+        )
+
+        res.json(atualizado.data)
+
+    } catch (erro) {
+
+        console.log(erro)
+
+        res.status(500).json({
+            erro: "Erro ao atualizar usuário"
+        })
+
+    }
+
+})
+app.patch("/api/personagens/:id", async (req, res) => {
+
+    const id = req.params.id
+
+    try {
+
+        const personagensResp = await axios.get(
+            "http://localhost:3000/personagens"
+        )
+
+        const personagem = personagensResp.data.find(
+            p => String(p.id) === String(id)
+        )
+
+        if (!personagem) {
+            return res.status(404).json({
+                erro: "Personagem não encontrado"
+            })
+        }
+
+        const atualizado = await axios.patch(
+            `http://localhost:3000/personagens/${id}`,
+            req.body
+        )
+
+        res.json(atualizado.data)
+
+    } catch (erro) {
+
+        console.log(erro)
+
+        res.status(500).json({
+            erro: "Erro ao atualizar personagem"
+        })
+    }
+})
+app.post("/api/missoes", async (req, res) => {
+
+    const missoesResp = await axios.get(
+        "http://localhost:3000/missoes"
+    )
+
+    const maiorCodigo = Math.max(
+        0,
+        ...missoesResp.data.map(
+            m => Number(m.codigo || 0)
+        )
+    )
+
+    const novaMissao = {
+        ...req.body,
+        codigo: maiorCodigo + 1
+    }
+
+    const criada = await axios.post(
+        "http://localhost:3000/missoes",
+        novaMissao
+    )
+
+    res.status(201).json(criada.data)
 })
 
 server.listen(3001, () => {

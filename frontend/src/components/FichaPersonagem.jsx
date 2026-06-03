@@ -41,9 +41,6 @@ function FichaPersonagem(props){
                 <BlocoAtributo titulo="DES" valor={props.personagem.atributos.des} icone={IconeForca}></BlocoAtributo>
                 <BlocoAtributo titulo="INT" valor={props.personagem.atributos.int} icone={IconeForca}></BlocoAtributo>
                 <BlocoAtributo titulo="HACK" valor={props.personagem.atributos.hack} icone={IconeForca}></BlocoAtributo>
-                <br></br>
-                <BlocoAtributo titulo="LEVEL" valor={props.level} icone={IconeForca}></BlocoAtributo>
-                <BlocoAtributo titulo="XP" valor={props.xp} icone={IconeForca}></BlocoAtributo>
                 <div className="text-red-500 items-center mt-4">
                             <button className="
                             text-lg

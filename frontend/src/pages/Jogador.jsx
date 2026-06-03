@@ -25,13 +25,8 @@ function Jogador() {
                     level={usuario.nivel}
                     xp={usuario.xp}
                 />
-                {usuarioMissao && (
-                <DashboardJogador
-                    missao={usuarioMissao.nome}
-                    descricao={usuarioMissao.descricao}
-                    desafio={usuarioMissao.conteudo}
-                />
-                )}
+
+                <DashboardJogador/>
 
                 <TerminalChat personagem={usuarioPersonagem.nome_personagem} missao={usuarioMissao} usuario={usuario}/>
 

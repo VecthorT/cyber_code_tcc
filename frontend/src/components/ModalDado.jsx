@@ -1,73 +1,99 @@
 import { useEffect, useState } from "react"
 import BotaoResposta from "./BotaoResposta"
-function ModalDado({ aberto, fechar, missao, setPersonagem}) {
+import api from "../services/api"
+function ModalDado({
+                aberto,
+                fechar,
+                missao,
+                setPersonagem,
+                setMissaoAtiva
+            })
+ {
 
-    const infoMissao = JSON.parse(localStorage.getItem("missao"))
+    const infoMissao = missao
     const [valorDado, setValorDado] = useState(1)
     const [rolando, setRolando] = useState(false)
     const [consequenciaDado, setResultadoDado] = useState({})
     const [mostrarResultado, setMostrarResultado] = useState(false)
     const [mensagemResultado, setMensagemResultado] = useState("")
-    function pegarResultadoDado(valor, resultadoDado){
-        if(valor == 20){
-
-                return resultadoDado["20"]
-
-            }
-
-            else if(valor >= 15){
-
-                return resultadoDado["15-19"]
-
-            }
-
-            else if(valor >= 10){
-
-                return resultadoDado["10-14"]
-
-            }
-
-            else if(valor >= 5){
-
-                return resultadoDado["5-9"]
-
-            }
-
-            else{
-
-                return resultadoDado["1-4"]
-
-            }
-
-        }
+    const [missaoFinalizada, setMissaoFinalizada] = useState(false)
+    const [resultadoFinal, setResultadoFinal] = useState(null)
+    
     function rolarDado() {
-
         setRolando(true)
 
         let contador = 0
 
         const intervalo = setInterval(() => {
-
             const numero = Math.floor(Math.random() * 20) + 1
-
             setValorDado(numero)
-            
+
             contador++
-            
+
             if (contador >= 20) {
-                
                 clearInterval(intervalo)
-                
                 setRolando(false)
-                setResultadoDado(pegarResultadoDado(numero,infoMissao.resultado_dado))
             }
-
         }, 100)
-
     }
     function salvarDados() {
 
     }
+    function gerarConsequencia(valorDado, acertou, missao) {
+        const baseXp = missao.xp_base
+
+        // CRÍTICO
+        if (valorDado === 20) {
+            return {
+                mensagem: "🔥 CRÍTICO ABSOLUTO",
+                bonus_xp: baseXp * 0.5,
+                penalidade: 0
+            }
+        }
+
+        // FALHA CRÍTICA
+        if (valorDado === 1) {
+            return {
+                mensagem: "💀 FALHA CRÍTICA",
+                bonus_xp: 0,
+                penalidade: acertou ? baseXp * 0.3 : baseXp * 0.5,
+                tipo_penalidade: "xp"
+            }
+        }
+
+        // SUCESSO NORMAL
+        if (acertou) {
+            if (valorDado >= 15) {
+                return {
+                    mensagem: "⚡ SUCESSO LIMPO",
+                    bonus_xp: baseXp * 0.25,
+                    penalidade: 0
+                }
+            }
+
+            if (valorDado >= 10) {
+                return {
+                    mensagem: "✔ SUCESSO",
+                    bonus_xp: baseXp * 0.1,
+                    penalidade: 0
+                }
+            }
+
+            return {
+                mensagem: "✔ SUCESSO FRACO",
+                bonus_xp: 0,
+                penalidade: 0
+            }
+        }
+
+        // ERRO NORMAL
+        return {
+            mensagem: "❌ FALHA",
+            bonus_xp: 0,
+            penalidade: baseXp * 0.2,
+                tipo_penalidade: "xp"
+            }
+        }
 
     useEffect(() => {
 
@@ -79,68 +105,133 @@ function ModalDado({ aberto, fechar, missao, setPersonagem}) {
     }, [aberto])
 
     if (!aberto) return null
+    function responderMissao(respostaJogador) {
+        const personagem = JSON.parse(localStorage.getItem("personagem"))
 
-    function responderMissao(respostaJogador){
-        const personagem = JSON.parse(
-            localStorage.getItem("personagem")
-        )
-        
-        const acertou =
-            respostaJogador == infoMissao.resposta
+        const acertou = respostaJogador === infoMissao.resposta
 
-        if(acertou){
-
-            personagem.xp +=
-                infoMissao.ganho_xp
-
-            if(consequenciaDado.bonus_xp){
-
-                personagem.xp +=
-                    consequenciaDado.bonus_xp
-            }
-
-            setMensagemResultado(
-                "✅ MISSÃO CONCLUÍDA"
-            )
-
-        }else{
-
-            if(
-                consequenciaDado.tipo_penalidade == "xp"
-            ){
-
-                personagem.xp -=
-                    consequenciaDado.penalidade
-
-            }else{
-
-                personagem.atributos[
-                    consequenciaDado.tipo_penalidade
-                ] -= consequenciaDado.penalidade
-
-            }
-
-            setMensagemResultado(
-                "☠ ACESSO NEGADO"
-            )
-
-        }
-
-        localStorage.setItem(
-            "personagem",
-            JSON.stringify(personagem)
+        const consequencia = gerarConsequencia(
+            valorDado,
+            acertou,
+            infoMissao
         )
 
-        setPersonagem(personagem)
+        setResultadoDado(consequencia)
+
+        setResultadoFinal({
+            acertou,
+            consequencia
+        })
+
+        setMensagemResultado(
+            acertou ? "✅ MISSÃO CONCLUÍDA" : "☠ ACESSO NEGADO"
+        )
 
         setMostrarResultado(true)
-        
-        setTimeout(() => {
-            
-            setMostrarResultado(false)
-        }, 2500)
 
+        setTimeout(() => {
+            setMostrarResultado(false)
+        }, 2000)
+        setMissaoFinalizada(true)
     }
+    async function fecharModal() {
+
+        if (missaoFinalizada && resultadoFinal) {
+
+            const usuario =
+                JSON.parse(
+                    localStorage.getItem("usuario")
+                )
+
+            const personagem =
+                JSON.parse(
+                    localStorage.getItem("personagem")
+                )
+
+            const { acertou, consequencia } =
+                resultadoFinal
+
+            if (acertou) {
+
+                personagem.xp +=
+                    infoMissao.ganho_xp +
+                    (consequencia.bonus_xp || 0)
+
+            } else {
+
+                if (
+                    consequencia.tipo_penalidade === "xp"
+                ) {
+
+                    personagem.xp -=
+                        consequencia.penalidade || 0
+
+                } else {
+
+                    personagem.atributos[
+                        consequencia.tipo_penalidade
+                    ] -= consequencia.penalidade
+                }
+            }
+
+            await api.patch(
+                `/personagens/${personagem.id}`,
+                personagem
+            )
+
+            const usuarioResp =
+                await api.get(
+                    `/usuarios/${usuario.id}`
+                )
+
+            const kanban =
+                usuarioResp.data.kanban
+
+            if (acertou) {
+
+                kanban.sprint =
+                    kanban.sprint.filter(
+                        id =>
+                            Number(id) !==
+                            Number(infoMissao.id)
+                    )
+
+                if (
+                    !kanban.concluido.includes(
+                        Number(infoMissao.id)
+                    )
+                ) {
+
+                    kanban.concluido.push(
+                        Number(infoMissao.id)
+                    )
+                }
+            }
+
+            await api.patch(
+                `/usuarios/${usuario.id}`,
+                { kanban }
+            )
+
+            localStorage.setItem(
+                "personagem",
+                JSON.stringify(personagem)
+            )
+
+            setPersonagem(personagem)
+
+            if (acertou) {
+
+                setMissaoAtiva(null)
+            }
+    }
+
+    setMissaoFinalizada(false)
+    setResultadoFinal(null)
+    setMostrarResultado(false)
+
+    fechar()
+}
     return (
         
         <div className="flex">
@@ -253,23 +344,20 @@ function ModalDado({ aberto, fechar, missao, setPersonagem}) {
                            !rolando && (
                                 <div className="text-green-400 text-sm">
                                     <p>
-                                        {consequenciaDado.mensagem}
+                                        {resultadoFinal?.consequencia?.mensagem}
                                     </p>
 
-                                    {
-                                        consequenciaDado.bonus_xp !== undefined && (
-                                            <p className="text-cyan-400 font-bold">
-                                                +{consequenciaDado.bonus_xp} XP
-                                            </p>
-                                        )
-                                    }
-                                    {
-                                        consequenciaDado.penalidade !== undefined && (
-                                            <p className="text-red-500 font-bold">
-                                                -{consequenciaDado.penalidade} {consequenciaDado.tipo_penalidade}
-                                            </p>
-                                        )
-                                    }
+                                    {resultadoFinal?.consequencia?.bonus_xp && (
+                                        <p className="text-cyan-400 font-bold">
+                                            +{resultadoFinal.consequencia.bonus_xp} XP
+                                        </p>
+                                    )}
+
+                                    {resultadoFinal?.consequencia?.penalidade && (
+                                        <p className="text-red-500 font-bold">
+                                            -{resultadoFinal.consequencia.penalidade}
+                                        </p>
+                                    )}
 
                                 </div>
                             )
@@ -280,7 +368,7 @@ function ModalDado({ aberto, fechar, missao, setPersonagem}) {
                     <div className="flex gap-4 mt-2">
 
                         <button
-                            onClick={fechar, missao}
+                            onClick={fecharModal}
                             
                             className="
                                 px-4
