@@ -1,0 +1,337 @@
+{
+  "usuarios": [
+    {
+      "id": "gNzM4g9QzLI",
+      "usuario": "admin",
+      "senha": "$2b$10$c1OEE/S4BnP2aaPUspQCVO2jOZ/xTJ7T5VDMaZ.Pfghj32c/3KFy6",
+      "tipo": "mestre",
+      "personagem": "",
+      "missao": null,
+      "status": "ativo"
+    },
+    {
+      "usuario": "eloiza",
+      "senha": "$2b$10$Gwr/TAbommK2MecdSk031evkhv7EkqKh7E2.LYz6j9viuK3hiXM..",
+      "tipo": "jogador",
+      "personagem": "1",
+      "xp": 0,
+      "nivel": 1,
+      "kanban": {
+        "backlog": [
+          0
+        ],
+        "sprint": [],
+        "concluido": [
+          4,
+          2,
+          5,
+          2,
+          6,
+          2
+        ]
+      },
+      "status": "ativo",
+      "id": "wU4n4nINeVg"
+    }
+  ],
+  "personagens": [
+    {
+      "id": "1",
+      "nome_personagem": "3L01Z4",
+      "classe": "ANDROID",
+      "atributos": {
+        "for": 5,
+        "des": 4,
+        "int": 6,
+        "hack": 9
+      },
+      "level": 6,
+      "xp": null,
+      "armas": [
+        8,
+        11
+      ],
+      "missao": [
+        3
+      ]
+    },
+    {
+      "id": "2",
+      "nome_personagem": "FL4VIZ L3ZB",
+      "classe": "NETRUNNER",
+      "atributos": {
+        "for": 3,
+        "des": 7,
+        "int": 8,
+        "hack": 10
+      },
+      "level": 7,
+      "xp": 720,
+      "armas": [
+        8,
+        11
+      ],
+      "missao": [
+        1,
+        5
+      ]
+    },
+    {
+      "id": "3",
+      "nome_personagem": "K4N3",
+      "classe": "MERCENARIO",
+      "atributos": {
+        "for": 9,
+        "des": 6,
+        "int": 4,
+        "hack": 2
+      },
+      "level": 5,
+      "xp": 430,
+      "armas": [
+        2,
+        12
+      ],
+      "missao": [
+        2
+      ]
+    },
+    {
+      "id": "4",
+      "nome_personagem": "GH05T",
+      "classe": "INFILTRADOR",
+      "atributos": {
+        "for": 4,
+        "des": 10,
+        "int": 7,
+        "hack": 6
+      },
+      "level": 8,
+      "xp": 890,
+      "armas": [
+        3,
+        10
+      ],
+      "missao": [
+        4
+      ]
+    },
+    {
+      "id": "5",
+      "nome_personagem": "N0V4",
+      "classe": "ENGENHEIRA",
+      "atributos": {
+        "for": 2,
+        "des": 5,
+        "int": 10,
+        "hack": 8
+      },
+      "level": 9,
+      "xp": 1100,
+      "armas": [
+        9,
+        11
+      ],
+      "missao": [
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "id": "6",
+      "nome_personagem": "R4ZOR",
+      "classe": "CAÇADOR",
+      "atributos": {
+        "for": 8,
+        "des": 8,
+        "int": 3,
+        "hack": 1
+      },
+      "level": 6,
+      "xp": 610,
+      "armas": [
+        1,
+        6
+      ],
+      "missao": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "7",
+      "nome_personagem": "K3V1N D4RK",
+      "classe": "TECNO-MAGO",
+      "atributos": {
+        "for": 3,
+        "des": 4,
+        "int": 9,
+        "hack": 9
+      },
+      "level": 10,
+      "xp": 1400,
+      "armas": [
+        8,
+        9
+      ],
+      "missao": [
+        5
+      ]
+    },
+    {
+      "id": "8",
+      "nome_personagem": "BL4D3",
+      "classe": "SAMURAI DIGITAL",
+      "atributos": {
+        "for": 7,
+        "des": 9,
+        "int": 5,
+        "hack": 4
+      },
+      "level": 7,
+      "xp": 760,
+      "armas": [
+        3,
+        5
+      ],
+      "missao": [
+        1,
+        2
+      ]
+    }
+  ],
+  "missaoJogador": [
+    {
+      "id": "1",
+      "usuarioId": 2,
+      "missaoId": 2,
+      "status": "backlog"
+    }
+  ],
+  "missoes": [
+    {
+      "id": "m1",
+      "codigo": 1,
+      "nome": "Firewall Ômega",
+      "alvo": "MegaCorp Industries",
+      "descricao": "A chuva ácida cai sobre Neon City enquanto cabos energizados iluminam os becos. Você invadiu os servidores secretos da MegaCorp, mas um ICE corporativo começou a rastrear sua localização em tempo real.",
+      "conteudo": "Complete corretamente o bloco de autenticação:\n\nif(usuario == 'admin' && senha == '123'){ ________ }\n\nA) acesso == true\nB) acesso = true\nC) acesso === false\nD) acesso != true",
+      "alternativas": {
+        "A": "acesso == true",
+        "B": "acesso = true",
+        "C": "acesso === false",
+        "D": "acesso != true"
+      },
+      "resposta": "B",
+      "xp_base": 120,
+      "atributo": "hack",
+      "kanban": {
+        "status": "backlog",
+        "responsavel": null
+      }
+    },
+    {
+      "id": "m2",
+      "codigo": 2,
+      "nome": "Fuga dos Drones",
+      "alvo": "Distrito Neon",
+      "descricao": "Sirenes ecoam entre os prédios enquanto drones policiais escaneiam cada esquina. Você precisa escapar sem ativar o sistema central de vigilância.",
+      "conteudo": "Complete corretamente a condição:\n\nif(velocidade > 80 ________ alerta == false){ }\n\nA) ||\nB) ==\nC) &&\nD) !=",
+      "alternativas": {
+        "A": "||",
+        "B": "==",
+        "C": "&&",
+        "D": "!="
+      },
+      "resposta": "C",
+      "xp_base": 100,
+      "atributo": "des",
+      "kanban": {
+        "status": "backlog",
+        "responsavel": null
+      }
+    },
+    {
+      "id": "m3",
+      "codigo": 3,
+      "nome": "Força Bruta",
+      "alvo": "Portão Titan",
+      "descricao": "Um gigantesco portão blindado bloqueia a entrada do subterrâneo proibido. Motores hidráulicos estremecem enquanto o sistema exige uma sequência válida.",
+      "conteudo": "Complete corretamente o loop:\n\nfor(let i = 0; i < 5; ________ ){ }\n\nA) i--\nB) i + 1\nC) i++\nD) ++5",
+      "alternativas": {
+        "A": "i--",
+        "B": "i + 1",
+        "C": "i++",
+        "D": "++5"
+      },
+      "resposta": "C",
+      "xp_base": 110,
+      "atributo": "for",
+      "kanban": {
+        "status": "backlog",
+        "responsavel": null
+      }
+    },
+    {
+      "id": "m4",
+      "codigo": 4,
+      "nome": "Ghost Protocol",
+      "alvo": "GhostNet Core",
+      "descricao": "Uma IA rebelde assumiu parte da GhostNet. Linhas de código começam a desaparecer enquanto o sistema tenta expulsar você da rede.",
+      "conteudo": "Complete corretamente a função:\n\nfunction hackSystem(){ ________ 'Invasão concluída' }\n\nA) break\nB) return\nC) console.log\nD) continue",
+      "alternativas": {
+        "A": "break",
+        "B": "return",
+        "C": "console.log",
+        "D": "continue"
+      },
+      "resposta": "B",
+      "xp_base": 130,
+      "atributo": "int",
+      "kanban": {
+        "status": "backlog",
+        "responsavel": null
+      }
+    },
+    {
+      "id": "m5",
+      "codigo": 5,
+      "nome": "SCRUM Nexus",
+      "alvo": "Nexus Systems",
+      "descricao": "A Nexus Systems sofreu um ataque digital durante a sprint final. O time perdeu o controle do backlog e o prazo está próximo do colapso.",
+      "conteudo": "No SCRUM, quem é responsável por priorizar o Product Backlog?\n\nA) Scrum Master\nB) Product Owner\nC) Dev Team\nD) Stakeholder",
+      "alternativas": {
+        "A": "Scrum Master",
+        "B": "Product Owner",
+        "C": "Dev Team",
+        "D": "Stakeholder"
+      },
+      "resposta": "B",
+      "xp_base": 90,
+      "atributo": "int",
+      "kanban": {
+        "status": "backlog",
+        "responsavel": null
+      }
+    },
+    {
+      "codigo": 6,
+      "nome": "Invasão ao Data Vault",
+      "alvo": "Data Vault Corporation",
+      "descricao": "Após invadir a rede da Data Vault Corporation, você encontrou um banco de dados criptografado contendo informações valiosas. Para acessar os registros antes que o sistema de segurança detecte sua presença, será necessário corrigir um trecho de código.",
+      "conteudo": "Qual será a saída do código abaixo?\nconst nivel = 5\n\nif(nivel >= 5){\nconsole.log(\"Acesso Liberado\")\n}else{\nconsole.log(\"Acesso Negado\")\n}",
+      "alternativas": {
+        "A": "Acesso Negado",
+        "B": "undefined",
+        "C": "Acesso Liberado",
+        "D": "Erro de Sintaxe"
+      },
+      "resposta": "C",
+      "xp_base": 150,
+      "atributo": "hack",
+      "id": "B6dt0SzXLlE"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
